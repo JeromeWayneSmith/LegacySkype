@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<meta http-equiv="x-ua-compatible" content="ie=Edge">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Expires" CONTENT="100">
+<meta name="robots" content="noindex,nofollow,noarchive,noodp,noimageindex,nomediaindex" />
+
+<title>Hello World | SnapBack Apps</title>
+
+<!--APP EXTERNAL JAVASCRIPT FILES -->
+<script type="text/javascript" src="sample-lib.js"></script>  
+<!--Add Any of Your Javascript Files Here -->  
+
+<!--TEMPLATE STYLE SHEETS --> 
+<link rel ="stylesheet" type="text/css" href="../common/css/style.css" title="style" />
+<link rel ="stylesheet" type="text/css" href="custom-style.css" title="custom-style" />
+    
+<!-- SCRIPTS FOR TABS --> 
+<script type="text/javascript" src="../common/js/jquery.min.js"></script>
+<script type="text/javascript" src="../common/js/tabs.js"></script> 
+
+<!-- SCRIPTS FOR LIBRARY FUNCTIONS -->
+<script type="text/javascript" src="../common/js/jslib.js"></script> 
+
+<!--MENU JAVASCRIPT FILES --> 
+<script type="text/javascript" src="../common/menu/cdptree.js"></script>  
+<script type="text/javascript" src="../common/menu/metree.js"></script>
+<script type="text/javascript">
+	var menuarray = new Array();
+</script>
+<script type="text/javascript">
+      // 
+	  // EDIT ME - Put your javascript functions here
+	  //
+	  
+      function getRelativeURL()
+      {
+         var relURL = "";
+         var strhref = document.location.href;
+         var array_url = strhref.split('/');
+         var arraylength = array_url.length;
+         if (arraylength > 2)
+         {
+            relURL = "../" + array_url[arraylength - 2] + "/" + array_url[arraylength - 1];
+         }
+         else
+         {
+            relURL = document.location.href;
+         }
+         
+         if (relURL.indexOf("#") > -1)
+         {
+            relURL = relURL.substring(0, relURL.indexOf("#"));
+         }
+         
+         if (relURL.indexOf("?") > -1)
+         {
+            relURL = relURL.substring(0, relURL.indexOf("?"));
+         }
+
+         return relURL;
+      }
+		
+      //var nodeURL = getUrlParts(document.location.href).search;
+		var treemenu01;
+
+		function loadTree(divid,treeName,nodeURL,jv){
+		//alert();
+		//alert ("In initTree()");
+			var str="";
+			var tmptree;
+		// divid == tree[treeName] == var name for the treemenu
+		// jsonVar == eval(treeName);
+		// nodeURL = string node url, this is the node that the tree will be opened to and focused on
+			tmptree = new cdpTree(divid,treeName,nodeURL);
+			tmptree.readScript(jv).renderTree();
+
+			tmptree.setKeyEvent(divid);
+			treemenu01=tmptree;
+			menuarray[divid]= tmptree;
+		}
+      window.onload = function(){
+         var treemenuobj = document.getElementById('treemenu01');
+         if (treemenuobj)
+         {
+            if (document.getElementById('treemenu01').visible)
+               document.getElementById('treemenu01').focus();
+         }
+      }
+</script>
+   
+<!-- Remote link and remote/internet detection code -->
+<script type="text/javascript" src="../common/js/onlinecheck.js"></script>
+
+<script language="javascript" type="text/javascript">
+</script>
+    
+</head>
+
+<body>
+<div id="page">
+   
+    <div id="header">
+   		 <div id="header-container">
+				<div id="logo">
+					<img src="../common/media/one-click-apps.png" alt="SnapBack Apps" />
+				</div>
+
+				<div id="app_title">
+					Hello World
+				</div>
+		</div>
+    </div>
+
+    <div id="contentwrapper">
+    
+    	<div id="secondary">
+			<div id="treemenu01" tabindex="0">
+				<script type="text/javascript">
+           		var nodeURL = getRelativeURL();
+					loadTree('treemenu01', 'menu01', nodeURL, menu01);
+				</script>
+			</div>
+		</div><!--End Secondary-->
+		
+		<div id="primary">
+		
+      	<ul class="tabs">
+      		<li><a href="#tab1" title="Run this App from Here">Home</a></li>
+      		<li><a href="#tab2" title="This App is free to Use">What's Free</a></li>
+      		<li><a href="#tab3" title="The technical details of what this App does">What it Does</a></li>
+      		<li><a href="#tab4" title="Record of Each Committee's work and report to users">What's Certified</a></li>
+      		<li><a href="#tab5" title="Here's how you can help make this App better, and how you can help support SnapBack Apps">How Can I Give Back</a></li>
+      	</ul>
+      				
+      	<div id="tab1">
+		
+			<div id="ad_1" style="width: 20%; float: right; display: inline; background: #e4e4e4; padding: 2%; margin: 0 0 5% 5%; text-align: center; border: 1px solid black;">
+				<strong>Brought to You by:</strong><br />
+				<img style="border: 1px solid #4f4f4f;" src="group-icon.jpg" title="" /><br />
+				<a id="helpers" href="http://factory.snapback-apps.com/group/app-helpers" title="The App Helpers Group">App Helpers</a><br>
+				<p>Thanks for using our App.  Join us and help by visiting our home page!</p>
+				
+				<hr />
+				
+				<p><a id="connectpage" href="http://factory.snapback-apps.com/app/hello-world" title="Hello World Connect Page">Improve how this App looks, works, submit a new app, or just an idea.</a>on this App's "Connect Page". </p>
+				
+				<hr />
+				
+				<p><a href="#" title="This will be a Standard Link for Users to Help Develop the SnapBack Apps Project">Help us help you! "Giving Back" costs next to nothing </a>and improves the SnapBack Apps Project</p>
+			</div>
+			
+            <p>SnapBack App. to Download and install Skype legacy version 6.18.80.106 </p>
+			<p><b> Advice If Downgrading:</b><br><br>
+
+If you downgrade your Skype version, this will likely be temporary. I predict that all updates will become forced very soon, as they've stated that all auto-updates will mandatory with Windows 10. This also will mean they will permanently break any previous versions of Skype. As of today, March 31, 2015, Skype is now upgraded automatically through Windows update, KB2876229. Your only option for disabling this is to right click in Windows Update, and choose HIDE. But, even this may be temporary, since a future update may “unhide” that KB, or issue a new one, just as they did with the Windows 8.0-8.1 forced upgrade. This will still not disable updates from being requested inside versions 6.18-6.22, for which you must also turn off the “Skype update service.”</p>
+            					
+			<table style="float: left; width: 70%; border: none; margin: 0 0;">
+				<tr>
+					<td style="border: none;" colspan="2"><hr /></td>
+				</tr>
+				<tr>
+					<td style="border: none; width: 25%;">
+						<div id="cdpbutton1">
+							<p><button onclick="javascript:runapp('LegacySkype.js')" title="cdpbutton1: Clicking this button will run a script!">
+							Download : Skype 6.18.80.106 
+							</button></p>
+						</div>
+					</td>
+					<td style="border: none; padding: 0 0 0 15px; vertical-align: top;">
+						This App Downloada : Skype 6.18.80.106 (msi version) MDA (62A2338FD9E20B677BBD57675E36B57B)
+					</td>
+				</tr>
+				<tr>
+					<td style="border: none;" colspan="2"><hr /></td>
+				</tr>
+			</table>
+                  				
+      	</div><!--End Tab1-->
+      				
+      	<div id="tab2">
+      			
+			<p>All SnapBack Apps are free for both business and personal use, provided that the SnapBack Platform is "hand installed", by a user and not "mass installed".    However, for some apps they may be working with or modify another application, such as Microsoft Word, which is obviously not free.  Sometimes we might independently offer that application to you with a link to a separate page.  If and when we offer you the software, we warrant that to our best ability, we've fully disclosed which products in that category are best, the least cost prices with links, along with any dissenting opinions from contributors like you. </p>
+			
+			<p>For all our users, contributors, attributable sources, and other companies, we've prepared an easy to understand page that explains all our 
+			<a href="#" >Policies, Complete Terms, and Conditions of our SnapBack Apps, Platform, website, and our SnapBack Apps Factory</a> where they are produced.  Together, this page, the FAQ, and the discussions of users, contributors, and CDP should convince you that this project is worthy of your full support.</p>
+      
+      	</div><!--End Tab2-->
+      				
+      	<div id="tab3">
+			<p>The Hello World App should work with all Windows versions, we have tested on XP, Vista, Windows 7 and Windows 8. Please let us know if you find any issues.</p>
+			<p>This App displays a pop-up window with text<br>
+			The window will go away automatically in 60 seconds</p>
+      		<h3>Script Source Code</h3>
+			<strong>cdpbutton1: <em>onclick="javascript:runapp('displaymessage.js')"</em></strong>
+			<p><iframe id="srccode" name="srccode" width=80% frameborder="0" scrolling="auto" src="displaymessage.txt" seamless sandbox=""></iframe></p>
+
+      	</div><!--End Tab3-->
+      				
+      	<div id="tab4">
+					
+			<p>Each Committee has signed off on their part.  For more detail of each committee’s policies and procedures, visit their home pages.</p>  
+
+			<table style="border-collapse: collapse;">
+				<tr>
+					<th style="padding: 15px; font-weight: bold;">Certification Committee</th>
+					<th style="padding: 15px; font-weight: bold;">Certification Details</th>
+				</tr>
+	
+				<tr>
+					<td style="padding: 15px; text-align: center;">CDP Certification</td>
+					<td style="padding: 15px;">
+						<p>Last Released = 3/6/2015<br>
+						Version = 1<br>
+						First Released = 2/22/2013<br>
+						Manifest = HelloWorld.xml<br>
+						By = Sam Snare</p>
+						<p>NOTE: to users.</p>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="padding: 15px; text-align: center;">Group Author</td>
+					<td style="padding: 15px;">
+						<p>By = App Helpers</p>
+						<p>NOTE: CDP will include any notes directed at the user here.</p>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 15px; text-align: center;">Visual / Grammar / Content / Connect Page</td>
+					<td style="padding: 15px;">
+						<p>Visual<br>Grammar<br>Content / Connect Page<br> By = App Helpers</p>
+						<p>NOTE: to users.</p>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 15px; text-align: center;">Performance / System Impact</td>
+					<td style="padding: 15px;">
+					<p>by = Max Vader</p>
+						<p>NOTE: Nothing Unusual.</p>
+					</td>
+				</tr>
+	
+				<tr>
+					<td style="padding: 15px; text-align: center;">Security/Logging/User Rights/Locations</td>
+					<td style="padding: 15px;">
+						<p>
+							Security:[Details]<br /> 
+							Logging: [Details]<br />
+							Users: [Details]<br />
+							Rights required: [Details]<br />
+							Locations: [Details]<br />
+						</p>
+						<p>NOTE: the Security/Logging/User Rights/Locations Committee will include any notes directed at the user here.</p>
+					</td>
+				</tr>
+	
+				<tr>
+					<td style="padding: 15px; text-align: center;">Safety/Conflicts/Compatibility/Expertise</td>
+					<td style="padding: 15px;">
+						<p>Safe = [Details] | Conflicts = [Details] | Compatibility = [Details] | UserType = [Details]</p>
+						<p>NOTE: the Safety/Conflicts/Compatibility/Expertise Committee will include any notes directed at the user here.</p>
+					</td>
+				</tr>
+	
+				<tr>
+					<td style="padding: 15px; text-align: center;">Legal/Attribution/Liability</td>
+					<td style="padding: 15px;">
+						<p>Attributed = [Details] | DMCA Issues = [Details] | Damage = [Details]</p>
+						<p>NOTE: the Legal/Attribution/Liability Committee will include any notes directed at the user here.</p>
+					</td>
+				</tr>
+	
+				<tr>
+					<td style="padding: 15px; text-align: center;">Monetization/Privacy</td>
+					<td style="padding: 15px;">
+						<p>Monetization = [Details] | Privacy Issues = [Details]</p>
+						<p>NOTE: the Monetization/Privacy Committee will include any notes directed at the user here.</p>
+					</td>
+				</tr>
+			</table>
+			
+			<hr />
+						
+      	</div><!--End Tab4-->
+      
+      	<div id="tab5">
+						
+<p><strong>There's a number of ways you can help our contributors, the SnapBack Platform Project, and users like you:</strong></p>
+  
+<p><strong>Tell us:</strong><br>
+       - Changes of how our Apps should look or work, and we'll quickly make those changes.<br>
+       - When software or hardware frustrates you, let us try to help:  <br>
+ &nbsp;&nbsp;&nbsp;- Browse the index on the left to see if there is already a solution, since more will be added daily.<br>
+  &nbsp;&nbsp;&nbsp;- When your solution or frustration is not listed, since once we hear you, we'll quickly create those solutions.<br>
+ </p>
+<p><strong>Tell others:</strong><br>
+      - Show how a SnapBack App is a solution to an asked question on sites like SuperUser.com.  Many sites offer written solutions that advise, if you hand-type or apply the fix.  Often, the solutions published vary in quality, method, have no error handling, and require more context and understanding than most users have. By simply referring them to that specific App's page, users on that site can simply choose to and safely apply that fix with a single click, (or first install SnapBack).  Read "best practices" and "example answers" to a posted problem, using links to a specific SnapBack App page.  
+</p> 
+<p><strong>Buy from us, or from our affiliate links:</strong>   (Note:  All sales will be done by Columbia Data Products, publisher of SnapBack Apps)<br>
+       - We don't pepper you with ads you don't want to see, or suggest any products that our contributors don't think you need to see right then. You'll be happy if you consider our contributor's recommendations when you see them, since we guarantee the best independent advice and price, along with any of the best alternatives known.<br>
+       - Amazon Affiliate links -- Anything you buy when you use this link helps us provide more solutions  [@SMadara: put affiliate link here, with graphic]<br>
+       - Microsoft Products --  Contact us, and we'll either provide the best prices on your needs, or advise you who has the best prices.  [Contact us HERE]<br>
+       - Google Apps and other Google products and services  CDP is already a dealer for Google, and we will provide you the best prices  [Contact us HERE]<br>
+ </p>
+<p><strong>Contribute CASH to SnapBack Apps: </strong>  (( ALL of these options should go to ONE page, with much more specific directions @SMadara))<br>
+       - Amazon Payments [ need to verify link for donations ]<br>
+       - BitCoins (Get logo, and I will get you an address)<br>
+       - Cash  [provide a link or email address]<br>
+       - PayPal --- <br>
+ </p>
+<p><strong>Later, we will provide links to:</strong><br>
+      - Like Us on Facebook: http://www.facebook.com/SnapBack_Apps (future)<br>
+      - Follow Us on Twitter: http://twitter.com/SnapBack_Apps (future)<br>
+      - Follow Us on Instagram: @SnapBack_Apps (future)<br>
+ </p>
+<p><strong>Ensure that any pages in Wikipedia are fair and balanced</strong> that reference SnapBack Apps (later) and Columbia Data Products <br>
+<strong>Share our Links or tell others about SnapBack Apps:</strong>   LinkedIn, Facebook, Twitter, Friends, Family & Coworkers
+ </p>
+ 
+</p><strong>Answer Questions on our CONNECT pages for this SnapBack App, or others:</strong>
+<a id="helloworldconnect" href="http://factory.snapback-apps.com/app/hello-world" title="Hello World Connect Page">Click Here</a><br>
+<strong>Become a Contributor, Writer, Manager, Helper, Graphic Design or Developer:</strong> http://Attracting-New-Developers-to-the-Community <br>
+</p> 
+<p><strong>Thanks for Contributing!</strong><br>
+This app was created with developers working in collaboration with users like you. We want your input and valuable contributions towards this app! We’d like to hear ANYTHING, good or bad, that you have to say. (We will NEVER hide ANY feedback.*)  Feedback can include any improvements you wish to see in this app, suggested layout/content changes, and development enhancements. We will generally publish edited excerpts from your input.
+ </p>
+      		
+      		<p><strong>The SnapBack Apps Factory is a platform where</strong> regular users interact with, or become App contributors and developers themselves.  Most technology products initially frustrates users unnecessarily.  If new versions were produced daily, users and developers were constantly communicating, products would quickly evolve to work perfectly.  SnapBack Apps' mission is to modify how any existing hardware and software interacts with ordinary users.   Our Factory connects users, contributors and developers in near real time to create or improve SnapBack Apps.  Changes that are apparently required are quickly communicated, applied and deployed to all users within hours.  Eventually, all changes that any user would ever want, are created and deployed.  The SnapBack Apps Factory platform is where contributors and users of all kinds communicate, design, and ultimately work together to accomplish this mission..</p>
+			
+      	</div><!--End Tab5-->
+      				
+      	<div style="clear: both;"></div>
+								
+		</div><!--End Primary-->
+      
+    </div><!--End Content Wrapper-->
+    
+    <div id="footer">
+    	<div id="footer-container">
+    		<p>Copyright &copy; 2013-2015 Columbia Data Products. All rights reserved.</p>
+    	</div>
+    </div>
+
+</div><!--End Page-->
+
+<!-- ************************************************ -->
+<!-- START: Required Web Page Logic close of body tag -->
+<!-- ************************************************ -->
+<script type="text/javascript">
+   // DEVELOPER NOTE: Set number of CDP buttons for page
+   var nCDPButtons = 3;  //Number of buttons for page.
+   // Global array of button objects inheriting from CDPButton class
+   var oButtonsArray = [];
+   oButtonsArray.length = nCDPButtons;  //Number of buttons for page. Array elements start with zero, so 3 buttons have elements 0 - 2.
+</script>
+<script type="text/javascript" src="../common/js/cdp-uri.js"></script>
+<script type="text/javascript">
+   <!--
+   // Globals used by ../common/webpagelogic.js
+   // DEVELOPER NOTE: Developer needs to set the next value
+   var PackageName = "apptemplate";
+
+	// DEVELOPER NOTE: Next value can be set, but is optional
+   var DemoPageName = "";	// Leave this blank or use an independent html file.
+   
+   var LivePageName = "main.html";
+   
+   var ButtonCount = oButtonsArray.length;
+   var oWPLogic;
+   /* Next initialization is the function name in [packagename]lib.js that runs when the "?run=1" parameter is included in the url */
+   var RunableFunction = "runapp()";
+   loadScript("../common/js/webpagelogic.js", function()
+   {
+      // Initialization code for instantiation of web page object
+      oWPLogic = new Webpage(PackageName, DemoPageName, LivePageName, ButtonCount);    //Function in ../common/webpagelogic.js
+      
+      snAppPage(oWPLogic);
+//      oWPLogic.isLocal = false;   //Uncomment this line to force online behavior
+
+      if (oWPLogic.isLocal)
+      {
+         /* No code here right now. */
+      }
+      else
+      {
+         /* Set oWPLogic properties from cdpbutton# divs */
+         fnGetAttributes(oWPLogic);
+         fnMakeCdpButtons(oWPLogic);
+      }
+   });
+   // -->
+</script>
+<!-- ********************************************** -->
+<!-- END: Required Web Page Logic close of body tag -->
+<!-- ********************************************** -->
+
+</body>
+</html> 
+
